@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 2.8)
 
-project(dui)
+project(CULib)
 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR} root_src)
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/Control control_src)
