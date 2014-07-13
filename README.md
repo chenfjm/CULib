@@ -1,10 +1,11 @@
 ﻿CULib
 =====
 
-duilib是一款强大的界面开发工具，可以将用户界面和处理逻辑彻底分离，极大地提高用户界面的开发效率。duilib界面库使用XML来描述界面风格，界面布局，可以很方便的构建高效，绚丽的，非常易于扩展的界面。从而很好的将界面和逻辑分离，同时易于实现各种超炫的界面效果如换色，换肤，透明等。
+duilib是一款强大的界面开发工具，可以将用户界面和处理逻辑彻底分离，极大地提高用户界面的开发效率。duilib界面库使用XML来描述界面风格，界面布局，可以很方便的构建高效，绚丽的，非常易于扩展的界面。从而很好的将界面和逻辑分离，同时易于实现各种超炫的界面效果如换色，换肤，透明等。   
+
+duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)     
 
 CULib是运行于Wince平台的DirectUI界面库，该项目基于duilib v1.1。
-duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)  
   
 主要特征如下：  
 
