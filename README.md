@@ -1,9 +1,32 @@
 ﻿CULib
 =====
 
-DirectUI Userinterface Library for Wince
+duilib是一款强大的界面开发工具，可以将用户界面和处理逻辑彻底分离，极大地提高用户界面的开发效率。duilib界面库使用XML来描述界面风格，界面布局，可以很方便的构建高效，绚丽的，非常易于扩展的界面。从而很好的将界面和逻辑分离，同时易于实现各种超炫的界面效果如换色，换肤，透明等。
 
-The project based on duilib(V1.1) compelete an interface library of DirectUI.which runs on Wince platform and named CULib and implements the separation of software interface and business logic designed to help users quickly build software interface.CULib takes DirectUI technology and based entirely on the GDI self-painted on the window. Using xml to describe the style of interface and interface layout.Could easily build efficient, brilliant, easily extensible interface.The general process is as follows:First of all, Using drawing software to draw the resources required by the software interface,and then build the xml configuration file.xml file is used to describe the icons and their attributes on the interface.The properties should include the icon's name, location, size, and so on.Finally, the interface library load xml file and parsing rules of it’s,paint the resource on window and bind interface and program logic.
+CULib是运行于Wince平台的DirectUI界面库，该项目基于duilib v1.1。
+duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)  
+  
+主要特征如下：  
+
+- 界面与业务逻辑分离
+- 使用XML配置界面
+- 内置常用的控件
+- 支持自定义控件
+- 强大的控件组合能力，复杂功能可通过简单控件组合完成
+- 基于GDI和脏矩形的高效绘制技术
+- 支持zip和DLL两种资源加载方式，支持多种图片格式
+- 强大的图片绘制描述方式
+- 类html字符串绘制技术
+- 支持动态变换色调
+- 支持动态切换资源位置方式换肤
+- 支持ansi和unicode，支持多国家语言
+- 支持插件系统
+- 内存占用小
+- 无第三方库依赖
+- 提供可见即所得的ui编辑器
+- 可以非常容易和mfc、wtl结合使用  
+
+ 
 
 
-duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)
+
