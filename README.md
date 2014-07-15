@@ -28,7 +28,7 @@ CULib具有以下一些特点：
 
 **源码结构**  
 
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/MainFrame.jpg)   
+![](https://chenfjm.github.io/CULib/images/MainFrame.jpg)   
 
 **使用方法**  
 
@@ -134,10 +134,10 @@ CULib具有以下一些特点：
 
 **Demo运行结果**  
 
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/360Safe.jpg)   
+![](https://chenfjm.github.io/CULib/images/360Safe.jpg)   
 
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/menu.jpg)   
+![](https://chenfjm.github.io/CULib/images/menu.jpg)   
 
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/list.jpg)   
+![](https://chenfjm.github.io/CULib/images/list.jpg)   
 
 Duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)     
