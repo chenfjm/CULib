@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Culib by chenfjm</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Culib : DirectUI Userinterface Library for Wince" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Culib</title>
   </head>
 
   <body>
-    <div id="container">
-      <div class="inner">
 
-        <header>
-          <h1>Culib</h1>
-          <h2>DirectUI Userinterface Library for Wince</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/chenfjm/CULib">View on GitHub</a>
+
+          <h1 id="project_title">Culib</h1>
+          <h2 id="project_tagline">DirectUI Userinterface Library for Wince</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/chenfjm/CULib/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/chenfjm/CULib/tarball/master">Download this project as a tar.gz file</a>
+            </section>
         </header>
+    </div>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/chenfjm/CULib/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/chenfjm/CULib/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/chenfjm/CULib" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
-
-        <hr>
-
-        <section id="main_content">
-          <h1>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
 <a name="culib" class="anchor" href="#culib"><span class="octicon octicon-link"></span></a>CULib</h1>
 
 <p>该项目基于Duilib界面库，实现一个运行于Wince平台的界面库CULib。该界面库针对嵌入式硬件的特点和Wince操作系统的特性对Duilib进行重构和优化。CULib将用户界面和处理逻辑分离，极大地提高用户界面的开发效率。并且使用xml来描述界面风格和界面布局，可以很方便地构建高效、绚丽、易于扩展的界面，而且xml语法简单，易于学习和掌握。     </p>
@@ -64,43 +64,40 @@
 
 <p><strong>使用方法</strong>  </p>
 
-<ul>
-<li>
 <p>界面库引入：  </p>
 
-<p>#include 
-#include 
-#include "CULib.h"
+<pre><code>\#include &lt;windows.h&gt;
+\#include &lt;objbase.h&gt;
+\#include "CULib.h"
 using namespace CULib;
-#ifdef _DEBUG
-#pragma comment(lib,"..\bin\CULib_d.lib")
-#else
-#pragma comment(lib,"..\bin\CULib.lib")
-#endif  </p>
-</li>
-</ul><p>这部分主要是包含一些使用CULib所需的头文件，并自动链接相应的CULib库。一般不用改动，需要注意的是CULib.h头文件和CULib.lib等库文件在磁盘中的位置。  </p>
+\#ifdef _DEBUG
+\#pragma comment(lib,"..\\bin\\CULib_d.lib")
+\#else
+\#pragma comment(lib,"..\\bin\\CULib.lib")
+\#endif  
+</code></pre>
 
-<ul>
-<li>
+<p>这部分主要是包含一些使用CULib所需的头文件，并自动链接相应的CULib库。一般不用改动，需要注意的是CULib.h头文件和CULib.lib等库文件在磁盘中的位置。  </p>
+
 <p>窗口实例：  </p>
 
-<p>class CFrameWindowWnd : public CWindowWnd, public INotifyUI
+<pre><code>class CFrameWindowWnd : public CWindowWnd, public INotifyUI
 {
 public:
 CFrameWindowWnd() { };
 LPCTSTR GetWindowClassName() const { return _T("UIMainFrame"); };
 UINT GetClassStyle() const { return  CS_DBLCLKS ; }
-void OnFinalMessage(HWND /<em>hWnd</em>/) { delete this; };
+void OnFinalMessage(HWND /*hWnd*/) { delete this; };
 void Init() 
 {
-        /** 程序初始化 <em>/
+        /** 程序初始化 */
 }
 void Notify(TNotifyUI&amp; msg)
 {
-   /*</em> 事件处理 */
-}</p>
+   /** 事件处理 */
+}
 
-<p>/** 消息处理 <em>/
+/** 消息处理 */
 LRESULT  OnCreate(uMsg, wParam, lParam, bHandled); 
 LRESULT  OnClose(uMsg, wParam, lParam, bHandled); 
 LRESULT  OnDestroy(uMsg, wParam, lParam, bHandled); 
@@ -109,19 +106,19 @@ LRESULT  OnSize(uMsg, wParam, lParam, bHandled);
 LRESULT  OnSysCommand(uMsg, wParam, lParam, bHandled); 
 LRESULT  HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    /*</em> 消息响应 */
+    /** 消息响应 */
 LRESULT lRes = 0;
 BOOL bHandled = TRUE;
 switch( uMsg ) {
-    case WM_CREATE:<br>
+    case WM_CREATE:     
       lRes = OnCreate(uMsg, wParam, lParam, bHandled); break;
-case WM_CLOSE:<br>
+case WM_CLOSE:   
       lRes = OnClose(uMsg, wParam, lParam, bHandled); break;
 case WM_DESTROY: 
       lRes = OnDestroy(uMsg, wParam, lParam, bHandled); break;
-case WM_ACTIVATE:<br>
+case WM_ACTIVATE:      
   lRes = OnActivate(uMsg, wParam, lParam, bHandled); break;
-case WM_SIZE:<br>
+case WM_SIZE:       
       lRes = OnSize(uMsg, wParam, lParam, bHandled); break;
 case WM_SYSCOMMAND: 
       lRes = OnSysCommand(uMsg, wParam, lParam, bHandled); break;
@@ -134,27 +131,26 @@ return CWindowWnd::HandleMessage(uMsg, wParam, lParam);
 }
 public:
 CPaintManagerUI m_pm;
-};  </p>
-</li>
-</ul><p>该部分是基本的窗口实现类和简单的消息响应，HandleMessage对消息进行预处理，之后传递给CPaintManagerUI::MessageHandler进行处理。Notify是对程序的事件处理，该事件通知是由控件对象向用户程序发送的。  </p>
+};  
+</code></pre>
 
-<ul>
-<li>
+<p>该部分是基本的窗口实现类和简单的消息响应，HandleMessage对消息进行预处理，之后传递给CPaintManagerUI::MessageHandler进行处理。Notify是对程序的事件处理，该事件通知是由控件对象向用户程序发送的。  </p>
+
 <p>程序入口与CULib初始化：  </p>
 
-<p>int WINAPI WinMain(HINSTANCE hInstance, 
-HINSTANCE /<em>hPrevInstance</em>/,
-LPWSTR /<em>lpCmdLine</em>/,
+<pre><code>int WINAPI WinMain(HINSTANCE hInstance, 
+HINSTANCE /*hPrevInstance*/,
+LPWSTR /*lpCmdLine*/,
  int nCmdShow)
 {
 CPaintManagerUI::SetInstance(hInstance);
 CPaintManagerUI::SetResourcePath(CPaintManagerUI::GetInstancePath());
-CPaintManagerUI::SetResourceZip(_T("Res.zip"));</p>
+CPaintManagerUI::SetResourceZip(_T("Res.zip"));
 
-<p>HRESULT Hr = ::CoInitializeEx(NULL,COINIT_MULTITHREADED);
-if( FAILED(Hr) ) return 0;</p>
+HRESULT Hr = ::CoInitializeEx(NULL,COINIT_MULTITHREADED);
+if( FAILED(Hr) ) return 0;
 
-<p>CFrameWindowWnd* pFrame = new CFrameWindowWnd();
+CFrameWindowWnd* pFrame = new CFrameWindowWnd();
 if( pFrame == NULL ) return 0;
 pFrame-&gt;Create(NULL, _T(""), 0, 0L);
 pFrame-&gt;CenterWindow();
@@ -162,12 +158,13 @@ pFrame-&gt;CenterWindow();
 CPaintManagerUI::MessageLoop();
 ::CoUninitialize();
 return 0;
-}    </p>
-</li>
-</ul><p>主要的初始化是设置资源路径，设置资源文件以及创建窗口。最后进入消息循环CPaintManagerUI::MessageLoop()。
+}    
+</code></pre>
+
+<p>主要的初始化是设置资源路径，设置资源文件以及创建窗口。最后进入消息循环CPaintManagerUI::MessageLoop()。
 为了简化界面库的使用，库中提供了一个非常方便的工具：WindowImpBase。这个类将上述前两部分封装在其内部，并在其中提供了各种默认的虚函数，供派生类重载。通过这个类，用户可以非常方便的来实现一个简单的界面。  </p>
 
-<p>更多内容请参见<a href="">CULib分析文档.pdf</a><br>
+<p>更多内容请参见<a href="https://github.com/chenfjm/CULib/tree/master/docs/CULib%E5%88%86%E6%9E%90%E6%96%87%E6%A1%A3.pdf">CULib分析文档.pdf</a><br>
 详细实现请参见Demo源码   </p>
 
 <p><strong>Demo运行结果</strong>  </p>
@@ -175,15 +172,18 @@ return 0;
 <p><img src="https://github.com/chenfjm/CULib/tree/gh-pages/images/360Safe.jpg" alt=""><img src="https://github.com/chenfjm/CULib/tree/gh-pages/images/menu.jpg" alt=""><img src="https://github.com/chenfjm/CULib/tree/gh-pages/images/list.jpg" alt=""></p>
 
 <p>Duilib项目主页：<a href="http://duilib.googlecode.com">duilib.googlecode.com</a>     </p>
-        </section>
-
-        <footer>
-          Culib is maintained by <a href="https://github.com/chenfjm">chenfjm</a><br>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
-
-        
-      </div>
+      </section>
     </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Culib maintained by <a href="https://github.com/chenfjm">chenfjm</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
   </body>
 </html>
