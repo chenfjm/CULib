@@ -32,7 +32,7 @@ CULib具有以下一些特点：
 
 **使用方法**  
 
-- 界面库引入：  
+界面库引入：  
 
     \#include <windows.h>
     \#include <objbase.h>
@@ -46,7 +46,7 @@ CULib具有以下一些特点：
 
 这部分主要是包含一些使用CULib所需的头文件，并自动链接相应的CULib库。一般不用改动，需要注意的是CULib.h头文件和CULib.lib等库文件在磁盘中的位置。  
 
-- 窗口实例：  
+窗口实例：  
 
     class CFrameWindowWnd : public CWindowWnd, public INotifyUI
     {
@@ -102,7 +102,7 @@ CULib具有以下一些特点：
 
 该部分是基本的窗口实现类和简单的消息响应，HandleMessage对消息进行预处理，之后传递给CPaintManagerUI::MessageHandler进行处理。Notify是对程序的事件处理，该事件通知是由控件对象向用户程序发送的。  
 
-- 程序入口与CULib初始化：  
+程序入口与CULib初始化：  
 
     int WINAPI WinMain(HINSTANCE hInstance, 
     HINSTANCE /*hPrevInstance*/,
@@ -129,7 +129,7 @@ CULib具有以下一些特点：
 主要的初始化是设置资源路径，设置资源文件以及创建窗口。最后进入消息循环CPaintManagerUI::MessageLoop()。
 为了简化界面库的使用，库中提供了一个非常方便的工具：WindowImpBase。这个类将上述前两部分封装在其内部，并在其中提供了各种默认的虚函数，供派生类重载。通过这个类，用户可以非常方便的来实现一个简单的界面。  
 
-更多内容请参见[CULib分析文档.pdf]()  
+更多内容请参见[CULib分析文档.pdf](https://github.com/chenfjm/CULib/tree/master/docs/CULib分析文档.pdf)  
 详细实现请参见Demo源码   
 
 **Demo运行结果**  
