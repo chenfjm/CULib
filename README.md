@@ -34,15 +34,15 @@ CULib具有以下一些特点：
 
 1.界面库引入：  
 
-    \#include <windows.h>
-    \#include <objbase.h>
-    \#include "CULib.h"
+    #include <windows.h>
+    #include <objbase.h>
+    #include "CULib.h"
     using namespace CULib;
-    \#ifdef _DEBUG
-    \#pragma comment(lib,"..\\bin\\CULib_d.lib")
-    \#else
-    \#pragma comment(lib,"..\\bin\\CULib.lib")
-    \#endif  
+    #ifdef _DEBUG
+    #pragma comment(lib,"..\\bin\\CULib_d.lib")
+    #else
+    #pragma comment(lib,"..\\bin\\CULib.lib")
+    #endif  
 
 这部分主要是包含一些使用CULib所需的头文件，并自动链接相应的CULib库。一般不用改动，需要注意的是CULib.h头文件和CULib.lib等库文件在磁盘中的位置。  
 
