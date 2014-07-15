@@ -32,7 +32,7 @@ CULib具有以下一些特点：
 
 **使用方法**  
 
-界面库引入：  
+1.界面库引入：  
 
     \#include <windows.h>
     \#include <objbase.h>
@@ -46,7 +46,7 @@ CULib具有以下一些特点：
 
 这部分主要是包含一些使用CULib所需的头文件，并自动链接相应的CULib库。一般不用改动，需要注意的是CULib.h头文件和CULib.lib等库文件在磁盘中的位置。  
 
-窗口实例：  
+2.增加窗口实例：  
 
     class CFrameWindowWnd : public CWindowWnd, public INotifyUI
     {
@@ -102,7 +102,7 @@ CULib具有以下一些特点：
 
 该部分是基本的窗口实现类和简单的消息响应，HandleMessage对消息进行预处理，之后传递给CPaintManagerUI::MessageHandler进行处理。Notify是对程序的事件处理，该事件通知是由控件对象向用户程序发送的。  
 
-程序入口与CULib初始化：  
+3.编写程序入口与CULib初始化：  
 
     int WINAPI WinMain(HINSTANCE hInstance, 
     HINSTANCE /*hPrevInstance*/,
@@ -134,8 +134,10 @@ CULib具有以下一些特点：
 
 **Demo运行结果**  
 
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/360Safe.jpg)
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/menu.jpg)
+![](https://github.com/chenfjm/CULib/tree/gh-pages/images/360Safe.jpg)   
+
+![](https://github.com/chenfjm/CULib/tree/gh-pages/images/menu.jpg)   
+
 ![](https://github.com/chenfjm/CULib/tree/gh-pages/images/list.jpg)   
 
 Duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)     
