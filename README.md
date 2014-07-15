@@ -1,10 +1,10 @@
 ﻿CULib
 =====   
 
-该项目基于Duilib界面库，实现一个运行于Wince平台的界面库CULib。该界面库针对嵌入式硬件的特点和Wince操作系统的特性对Duilib进行重构和优化。CULib将用户界面和处理逻辑分离，极大地提高用户界面的开发效率。并且使用xml来描述界面风格和界面布局，可以很方便地构建高效、绚丽、易于扩展的界面，而且xml语法简单，易于学习和掌握。   
+该项目基于Duilib界面库，实现一个运行于Wince平台的界面库CULib。该界面库针对嵌入式硬件的特点和Wince操作系统的特性对Duilib进行重构和优化。CULib将用户界面和处理逻辑分离，极大地提高用户界面的开发效率。并且使用xml来描述界面风格和界面布局，可以很方便地构建高效、绚丽、易于扩展的界面，而且xml语法简单，易于学习和掌握。     
+
 在Wince环境下的GUI软件一般采用传统的MFC界面库，开发出的软件不美观、界面细节处理不好、使用硬编码、开发效率低下、生成程序体积大，而且传统MFC界面美化大都使用HOOK等对系统影响比较大的技术，可能会导致系统不稳定或引发其他错误。CULib库采用DirectUI技术，完全基于GDI在窗口上自绘，弥补了MFC等传统界面库在Wince上的不足。CULib的出现使得在Wince这样的嵌入式环境中构建绚丽的界面变得简单、高效。  
 
-duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)     
 
 CULib具有以下一些特点：   
 
@@ -34,15 +34,15 @@ CULib具有以下一些特点：
 
 - 界面库引入：  
 
-    #include <windows.h>
-    #include <objbase.h>
-    #include "../CULib/CULib.h"
+    \#include <windows.h>
+    \#include <objbase.h>
+    \#include "CULib.h"
     using namespace CULib;
-    #ifdef _DEBUG
-    #pragma comment(lib,"..\\bin\\CULib_d.lib")
-    #else
-    #pragma comment(lib,"..\\bin\\CULib.lib")
-    #endif  
+    \#ifdef _DEBUG
+    \#pragma comment(lib,"..\\bin\\CULib_d.lib")
+    \#else
+    \#pragma comment(lib,"..\\bin\\CULib.lib")
+    \#endif  
 
 这部分主要是包含一些使用CULib所需的头文件，并自动链接相应的CULib库。一般不用改动，需要注意的是CULib.h头文件和CULib.lib等库文件在磁盘中的位置。  
 
@@ -136,4 +136,6 @@ CULib具有以下一些特点：
 
 ![](https://github.com/chenfjm/CULib/tree/gh-pages/images/360Safe.jpg)
 ![](https://github.com/chenfjm/CULib/tree/gh-pages/images/menu.jpg)
-![](https://github.com/chenfjm/CULib/tree/gh-pages/images/list.jpg)
+![](https://github.com/chenfjm/CULib/tree/gh-pages/images/list.jpg)   
+
+Duilib项目主页：[duilib.googlecode.com](http://duilib.googlecode.com)     
